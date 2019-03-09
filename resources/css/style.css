@@ -24,6 +24,14 @@ html {
 	text-rendering: optimizeLegibility;
 }
 
+.clearfix {zoom: 1}
+.clearfix:after{
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
 /**********************/
 /* REUSABLE COMPONENTS */
 /**********************/
@@ -36,16 +44,21 @@ html {
 section {
     padding: 80px 0;
 }
+
+.box {
+	padding: 1%;
+}
 /**********************/
 /* HEADINGS  */
 /**********************/
 
 h1,
-h2{
+h2,
+h3{
 	
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    
    }
 
 h1 {
@@ -53,6 +66,7 @@ h1 {
     color: #fff;
     font-size: 240%;
     word-spacing: 4px;
+	letter-spacing: 1px;
 }
 
 h2 {
@@ -60,7 +74,14 @@ h2 {
     word-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
+	letter-spacing: 1px;
     
+}
+
+h3 {
+	font-size: :110%;
+	margin-bottom: 15px;
+	
 }
 h2:after{
     display: block;
@@ -71,11 +92,27 @@ h2:after{
     margin: 0 auto; /*to mkae it centre*/
     margin-top: 20px;
 }
-
+/*-----PARAGRAPH -----*/
 .long-copy {
     line-height: 145%;
     width: 70%;
     margin-left: 15%;
+}
+
+.box p {
+	font-size: 90%;
+	line-height: 145%;
+}
+
+
+/*------ICONS------*/
+
+.icon-big {
+	font-size: 350%;
+	display: block;
+	color: #e67e22;
+	margin-bottom: 10px;
+	
 }
 /**********************/
 /* BUTTON COMPONENTS */
@@ -159,4 +196,118 @@ header {
 .main-nav li a:hover,
 .main-nav li a:active{
     border-bottom: 2px solid #e67e22;
+}
+
+/**********************/
+/* FEATURES */
+/**********************/
+
+.section-features .long-copy{
+	margin-bottom: 30px;
+}
+
+/**********************/
+/* MEALS */
+/**********************/
+
+.section-meals {
+	padding: 0;
+}
+
+.meals-showcase {
+	list-style: none;
+	width: 100%;
+}
+.meals-showcase li {
+	display: block;
+	float: left;
+	width: 25%;
+}
+
+.meals-photo {
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.meals-photo img{
+	opacity: 0.7;
+	width: 100%;
+	height: auto;
+	transform: scale(1.15);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.meals-photo img:hover {
+	opacity: 1;
+	transform: scale(1.03);
+}
+	
+/**********************/
+/* HOW IT WORKS */
+/**********************/
+
+.section-steps {
+	background-color: #f4f4f4;
+}
+	
+.steps-box:first-child {
+	text-align: right;
+	padding-right: 3%;
+	margin-top: 30px;
+}
+
+.steps-box:last-child {
+	padding-left: 3%;
+	margin-top: 70px;
+}
+.app-screen {
+	width: 40%;
+}
+.work-step {
+	margin-bottom: 50px;
+}
+
+.work-step:last-of-type {
+	margin-bottom: 80px;
+}
+
+.work-step div {
+	color: #e67e22;
+	border: 2px solid #e67e22;
+	display: inline-block;
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	text-align: center;
+	padding: 5px;
+	float: left;
+	font-size: 150%;
+	margin-right: 25px;
+}
+
+.btn-app img {
+	height: 50px;
+	width: auto;
+	margin-right: 10px;
+}
+
+/**********************/
+/* CITIES */
+/**********************/
+
+
+.box img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+.city-feature {
+	margin-bottom: 5px;
+}
+.icon-small {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
 }
