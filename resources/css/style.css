@@ -12,16 +12,19 @@ Orange : #e67e22
 * {
 	margin: 0;
 	padding: 0;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-html {
+html,
+body {
 	background-color: #fff;
 	color: #7B7D7D;
 	font-family: lato, Arial, sans-serif;
 	font-weight: 300;
 	font-size: 20px;
 	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
 }
 
 .clearfix {zoom: 1}
@@ -79,7 +82,7 @@ h2 {
 }
 
 h3 {
-	font-size: :110%;
+	font-size: 110%;
 	margin-bottom: 15px;
 	
 }
@@ -103,7 +106,23 @@ h2:after{
 	font-size: 90%;
 	line-height: 145%;
 }
+/*------LINKS------*/
 
+a:link,
+a:visited{
+	color: #e67e22;
+	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #e67e22;
+	-webkit-transition: border-bottom 0.2s, color 0.2s;
+	transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+	color: #555;
+	border-bottom: 1px solid transparent;
+}
 
 /*------ICONS------*/
 
@@ -118,17 +137,20 @@ h2:after{
 /* BUTTON COMPONENTS */
 /**********************/
 .btn:link,
-.btn:visited{
+.btn:visited,
+input[type=submit]{
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
     border-radius:  200px;
+    -webkit-transition: background-color 0.2s, border 0.2s color 0.2s;
     transition: background-color 0.2s, border 0.2s color 0.2s;
 }
 
 .btn-full:link,
-.btn-full:visited{
+.btn-full:visited,
+input[type=submit]{
     background-color: #e67e22;
     border: 1px solid #e67e22;
     color: #fff;
@@ -139,12 +161,15 @@ h2:after{
     color: #e67e22;
 }
 .btn:hover,
-.btn:active{
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
     background-color: #cf6d17;
     
 }
 .btn-full:hover,
-.btn-full:active{
+.btn-full:active,
+{
     border: 1px solid #cf6d17;    
 }
 .btn-ghost:hover,
@@ -158,16 +183,19 @@ h2:after{
 /* HEADER COMPONENTS */
 /**********************/
 header {
+	background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))),   url(img/hero.jpg);
 	background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),   url(img/hero.jpg); 
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 }
 .hero-text-box{
 	position: absolute;	
 	width: 1140px;
 	top : 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
 .logo {
@@ -235,12 +263,17 @@ header {
 	opacity: 0.7;
 	width: 100%;
 	height: auto;
+	-webkit-transform: scale(1.15);
 	transform: scale(1.15);
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+	transition: opacity 0.5s, -webkit-transform 0.5s;
 	transition: transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .meals-photo img:hover {
 	opacity: 1;
+	-webkit-transform: scale(1.03);
 	transform: scale(1.03);
 }
 	
@@ -251,7 +284,9 @@ header {
 .section-steps {
 	background-color: #f4f4f4;
 }
-	
+
+.steps-box {margin-top: 30px;}
+
 .steps-box:first-child {
 	text-align: right;
 	padding-right: 3%;
@@ -287,6 +322,11 @@ header {
 	margin-right: 25px;
 }
 
+.btn-app:link,
+.btn-app:visited {
+	border: 0;
+}
+
 .btn-app img {
 	height: 50px;
 	width: auto;
@@ -310,4 +350,219 @@ header {
 	display: inline-block;
 	width: 30px;
 	text-align: center;
+	color: #e67e22;
+	font-size: 120%;
+	margin-right: 10px;
+	
+	/*secrets to align text and icons*/
+	line-height: 120%;
+	vertical-align: middle;
+	margin-top: -5px;
+}
+
+/**********************/
+/* TESTIMONIALS */
+/**********************/
+
+.section-testimonials{
+	background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.8)),to(rgba(0,0,0,0.8))),url(img/back-customers.jpg);
+	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/back-customers.jpg);
+	background-size: cover;
+	color: #fff;
+	background-attachment: fixed;	
+}
+blockquote {
+	padding: 2%;
+	font-style: italic;
+	line-height: 145%;
+	position: relative;
+	margin-top: 40px;
+}
+
+blockquote:before {
+	content: "\201C"; 
+	font-size: 400%;
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	
+}
+
+cite {
+	font-size: 90%;
+	margin-top: 25px;
+	display: block;
+}
+
+cite img {
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+
+/**********************/
+/* SECTION PLAN */
+/**********************/
+
+.section-plans {
+	background-color: #f4f4f4;
+}
+
+.plan-box {
+	background-color: #fff;
+	border-radius: 5px;
+	width: 90%;
+	margin-left: 5%;
+	
+}
+.plan-box div {
+	padding: 15px;
+	border-bottom: 1px solid #e8e8e8;
+}
+.plan-price {
+	font-size: 300%;
+	margin-bottom: 10px;
+	font-weight: 100;
+	color: #e67e22;
+}
+.plan-price span {
+	font-size: 30%;
+	font-weight: 300;
+}
+.plan-price-meal {
+	font-size: 80%;	
+}
+.plan-box ul {
+	list-style: none;
+}
+.plan-box ul li {
+	padding: 5px 0;
+}
+
+/*To center the sign up button within their div*/
+.plan-box div:last-child{
+	text-align: center;
+	border: 0;
+}
+/*To make the background of 1st div darker*/
+.plan-box div:first-child{
+	background-color: #fcfcfc;
+}
+
+/**********************/
+/* FORM */
+/**********************/
+
+.contact-form {
+	width: 60%;	
+	margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+	width: 100%;
+	padding: 7px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+
+textarea {
+	height: 100%;
+}
+input[type=checkbox]{
+	margin: 10px 5px 10px 0;
+}
+
+/*To remove defaul blue border from all input*/
+*:focus {outline: none;}
+
+/**********************/
+/* FOOTER */
+/**********************/
+
+footer {
+	background-color: #333;
+	padding: 40px;
+	font-size: 90%;
+}
+
+.footer-nav {
+	list-style: none;
+	float: left; 
+}
+
+.social-links {
+	list-style: none;
+	float: right; 
+}
+.footer-nav li,
+.social-links li{
+	display: inline-block;
+	margin-right: 20px;
+}
+
+/*to remove the right margin from the last element of links and footer nav*/
+.footer-nav li:last-child,
+.social-links li:last-child{
+margin-right: 0px;
+}
+
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+	text-decoration: none;
+	color: #888;
+	border: 0;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active
+{
+	
+	color: #ddd;
+	
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+	font-size: 160%;
+}
+
+footer p {
+	color: #888;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.ion-logo-twitter,
+.ion-logo-facebook,
+.ion-logo-instagram,
+.ion-logo-googleplus {
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.ion-logo-twitter:hover{
+	color: #1da1f2;
+}
+
+.ion-logo-facebook:hover{
+	color: #3b5998;
+}
+
+.ion-logo-instagram:hover{
+	color: #c32aa3;
+}
+
+.ion-logo-googleplus:hover{
+	color: #db4437;
 }
