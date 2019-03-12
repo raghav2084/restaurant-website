@@ -611,3 +611,20 @@ footer p {
 .ion-logo-googleplus:hover{
 	color: #db4437;
 }
+
+/**********************/
+/*ANIMATIONS*/
+/**********************/
+
+.js--wp-1,
+.js--wp-iphone,
+.js--wp-cities{
+	opacity: 0;
+}
+
+
+.js--wp-1.animated,
+.js--wp-iphone.animated,
+.js--wp-cities.animated{
+	opacity: 1;
+}

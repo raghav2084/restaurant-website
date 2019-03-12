@@ -39,4 +39,30 @@ $(document).ready(function() {
 		scrollTop: $($(this).attr('href')).offset().top
 	}, 1000);
 });
+	
+	/*Animation on scroll using Animation.css & Waypoint*/
+	$('.js--wp-1').waypoint(function(direction){
+		$('.js--wp-1').addClass('animated fadeIn');
+	}, {
+		offset: '50%'
+	});
+	
+	/*Mobile Imgae fadeInUp*/
+	$('.js--wp-iphone').waypoint(function(direction){
+		$('.js--wp-iphone').addClass('animated fadeInUp');
+	}, {
+		offset: '50%'
+	});
+	/*City Imgae fadeIn*/
+	$('.js--wp-cities').waypoint(function(direction){
+		$('.js--wp-cities').addClass('animated fadeIn');
+	}, {
+		offset: '50%'
+	});
+	/*Premium Box pulse*/
+	$('.js--wp-pre').waypoint(function(direction){
+		$('.js--wp-pre').addClass('animated pulse');
+	}, {
+		offset: '50%'
+	});
 });
