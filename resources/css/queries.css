@@ -48,7 +48,52 @@
 	.hero-text-box{padding: 0 4%;}
 	.col {width: 100%;
 	margin: 0 0 4% 0;}
+	
+	
+
+	/**********************/
+	/*MOBILE NAVIGATION*/
+	/**********************/
+	/*Nav items will not be dispay initially*/
 	.main-nav {display: none;}
+	
+	.mobile-nav-icon {
+		display: inline-block;
+	}
+	
+	/*move the nav to left*/
+	.main-nav {
+		float: left;
+		margin-top: 35px;
+		margin-left: 25px;
+		
+	}
+	
+	/*display the li items as blocks*/
+	.main-nav li {
+		display: block;
+	}
+	/*styling the li items now*/
+	.main-nav li a:link,
+	.main-nav li a:visited{
+		display: block;
+		border: 0;
+		padding: 10px 0;
+		font-size: 100%;
+	}
+	
+	
+	/*Styling sticky mobile navigation*/
+	
+	.sticky .main-nav { margin-top: 10px;}
+
+	.sticky .main-nav li a:link,
+	.sticky .main-nav li a:visited{padding: 10px 0;}
+	/*styling the icon back in sticky mobile*/
+	.sticky .mobile-nav-icon i {color: #555;}
+	.sticky .mobile-nav-icon {margin-top: 10px;}
+	
+	/*********MOBILE NAV END*************/
 	.long-copy{
 		width: 100%;
 		margin-left: 0%;

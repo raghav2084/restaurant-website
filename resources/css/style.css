@@ -242,6 +242,26 @@ header {
     border-bottom: 2px solid #e67e22;
 }
 
+
+/**********************/
+/*MOBILE NAVIGATION*/
+/**********************/
+
+
+.mobile-nav-icon {
+	float: right;
+	margin-top: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+/*Styling the mobile nav icon*/
+.mobile-nav-icon i {
+	font-size: 200%;
+	color: #fff;
+}
+
+
 /**********************/
 /*STICKY NAVIGATION*/
 /**********************/
